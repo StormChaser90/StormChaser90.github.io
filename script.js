@@ -9,5 +9,6 @@ function makeRows(rows, cols) {
     container.appendChild(cell).className = "grid-item";
   }
 }
+// hover effect when mousing over squares
 
 makeRows(16, 16);
