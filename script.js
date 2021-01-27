@@ -6,29 +6,30 @@ let cell = [];
 // create variable to store container
 const container = document.getElementById("container");
 
-// create a div and make a square
-function makeRows(rows, cols) {
-  container.style.setProperty("--grid-rows", rows);
-  container.style.setProperty("--grid-cols", cols);
-  for (c = 0; c < rows * cols; c++) {
+// Slider
+// let slider = document.getElementById("sliderRange");
+// let output = document.getElementById("demo");
+// output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value
+function updateGrid() {
+  let userInput = document.getElementById("sliderRange").value;
+  document.getElementById("demo").innerHTML = userInput;
+  container.style.gridTemplateColumns = `repeat(${userInput}, 1fr`;
+  container.style.gridTemplateRows = `repeat(${userInput}, 1fr`;
+  let allCells = userInput * userInput;
+  for (c = 0; c < allCells; c++) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "grid-item";
   }
 }
 
-// Slider
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-function gridValue() {
-  let userInput = document.getElementById("myRange").value;
-  document.getElementById("demo").innerHTML = userInput;
-  console.log(slider.value);
+// button change to reset after each click
+function btnClick() {
+  let change = document.getElementById("gridBtn");
+  if (change.innerHTML == "Set") {
+    change.innerHTML = "Reset";
+  } else {
+    change.innerHTML = "Set";
+  }
 }
-
-// Link slider value to grid
-makeRows(16, 16);
-
-// console.log(demo);
