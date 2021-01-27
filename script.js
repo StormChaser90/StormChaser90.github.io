@@ -24,9 +24,11 @@ function btnClick() {
   let change = document.getElementById("gridBtn");
   if (change.innerHTML == "Reset") {
     change.innerHTML = "Set";
+
     resetGrid();
   } else {
     change.innerHTML = "Reset";
+    disableSlider();
   }
 }
 
@@ -38,7 +40,11 @@ function resetGrid() {
 // Display slider position //
 let slider = document.getElementById("sliderRange");
 let output = document.getElementById("demo");
-// output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function () {
   output.innerHTML = this.value;
 };
+
+// Disable slider use until reset
+function disableSlider() {
+  document.getElementById("sliderRange").disabled = true;
+}
