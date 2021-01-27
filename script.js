@@ -24,11 +24,11 @@ function btnClick() {
   let change = document.getElementById("gridBtn");
   if (change.innerHTML == "Reset") {
     change.innerHTML = "Set";
-
     resetGrid();
   } else {
     change.innerHTML = "Reset";
     disableSlider();
+    document.addEventListener("click", hiddenSlider());
   }
 }
 
@@ -47,4 +47,8 @@ slider.oninput = function () {
 // Disable slider use until reset
 function disableSlider() {
   document.getElementById("sliderRange").disabled = true;
+}
+
+function hiddenSlider() {
+  slider.style.opacity = ".2";
 }
