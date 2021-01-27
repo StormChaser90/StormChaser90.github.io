@@ -6,11 +6,6 @@ let cell = [];
 // create variable to store container
 const container = document.getElementById("container");
 
-// Slider
-// let slider = document.getElementById("sliderRange");
-// let output = document.getElementById("demo");
-// output.innerHTML = slider.value; // Display the default slider value
-
 // Update the current slider value
 function updateGrid() {
   let userInput = document.getElementById("sliderRange").value;
@@ -35,7 +30,16 @@ function btnClick() {
   }
 }
 
-// Function to clear grid
+// Function to clear grid //
 function clearGrid() {
   window.location.reload(true);
 }
+
+// Display slider position //
+let slider = document.getElementById("sliderRange");
+let output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+slider.oninput = function () {
+  output.innerHTML = this.value;
+};
