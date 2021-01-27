@@ -27,9 +27,15 @@ function updateGrid() {
 // button change to reset after each click
 function btnClick() {
   let change = document.getElementById("gridBtn");
-  if (change.innerHTML == "Set") {
-    change.innerHTML = "Reset";
-  } else {
+  if (change.innerHTML == "Reset") {
     change.innerHTML = "Set";
+    clearGrid();
+  } else {
+    change.innerHTML = "Reset";
   }
+}
+
+// Function to clear grid
+function clearGrid() {
+  window.location.reload(true);
 }
