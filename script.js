@@ -22,14 +22,13 @@ let output = document.getElementById("demo");
 output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
-// slider.oninput = function () {
-//   output.innerHTML = this.value;
-// };
-
-// Link slider value to grid
-makeRows(16, 16);
 function gridValue() {
   let userInput = document.getElementById("myRange").value;
   document.getElementById("demo").innerHTML = userInput;
+  console.log(slider.value);
 }
-console.log(gridValue);
+
+// Link slider value to grid
+makeRows(16, 16);
+
+// console.log(demo);
