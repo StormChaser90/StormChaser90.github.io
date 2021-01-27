@@ -50,3 +50,13 @@ function disableSlider() {
     slider.style.opacity = ".2";
   });
 }
+
+// function to grab colorpicker value //
+function colorChoice() {
+  console.log(colorPicker.value);
+}
+
+// function to apply colorpicker value to grid //
+function draw() {
+  document.getElementByID("colorPicker.value");
+}
