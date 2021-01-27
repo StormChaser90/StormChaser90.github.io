@@ -1,7 +1,7 @@
 // variable for current mouse position
-let currentlyActive = false;
-let currentColor = [];
-let cell = [];
+// let currentlyActive = false;
+// let currentColor = [];
+// let cell = [];
 
 // create variable to store container
 const container = document.getElementById("container");
@@ -19,27 +19,26 @@ function updateGrid() {
   }
 }
 
-// button change to reset after each click
+// button changes to reset after each click
 function btnClick() {
   let change = document.getElementById("gridBtn");
   if (change.innerHTML == "Reset") {
     change.innerHTML = "Set";
-    clearGrid();
+    resetGrid();
   } else {
     change.innerHTML = "Reset";
   }
 }
 
-// Function to clear grid //
-function clearGrid() {
+// Function to reset grid //
+function resetGrid() {
   window.location.reload(true);
 }
 
 // Display slider position //
 let slider = document.getElementById("sliderRange");
 let output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
-
+// output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function () {
   output.innerHTML = this.value;
 };
