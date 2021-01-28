@@ -51,31 +51,12 @@ function disableSlider() {
   });
 }
 
-// function to log colorpicker value // Currently works as input color only
-// colorBtn.addEventListener("click", colorChoice);
-// container.addEventListener("mouseover", function (e) {
-//   e.target.style.backgroundColor = "blue";
-// });
-
-// function colorChoice() {
-//   console.log(colorPicker.value);
-// }
-
-// colorBtn.addEventListener("click", colorChoice);
-// container.addEventListener("mouseover", function (e) {
-//   e.target.style.backgroundColor = "blue";
-// });
-
-// function colorChoice(e) {
-//   console.log(colorPicker.value);
-// }
-
+// Draw with selected color!
 let colorPickerEl = document.getElementById("colorPicker");
-colorPickerEl.addEventListener("click", colorPickerOnChange);
+colorPickerEl.addEventListener("change", colorPickerOnChange);
 
 function colorPickerOnChange(e) {
   let color = e.target.value;
-  // console.log(color);
   addColorDiv(color);
 }
 
@@ -84,12 +65,3 @@ function addColorDiv(color) {
     e.target.style.backgroundColor = color;
   });
 }
-
-// function to apply colorpicker value to grid //
-// let userColor = document.querySelector("colorPicker");
-
-// function draw() {
-//   document.getElementsByClassName(
-//     "grid-item"
-//   ).style.backgroundColor = colorPicker.value;
-// }
