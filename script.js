@@ -5,7 +5,7 @@
 
 // create variable to store container
 const container = document.getElementById("container");
-
+//
 // Update the current slider value
 function updateGrid() {
   let userInput = document.getElementById("sliderRange").value;
@@ -51,12 +51,33 @@ function disableSlider() {
   });
 }
 
-// function to grab colorpicker value //
+// function to log colorpicker value // Currently works as input color only
+colorBtn.addEventListener("click", colorChoice);
+container.addEventListener("mouseover", function (e) {
+  e.target.style.backgroundColor = "blue";
+});
+
 function colorChoice() {
   console.log(colorPicker.value);
 }
 
+// let colorPickerEl = document.getElementById("colorPicker");
+// colorPickerEl.addEventListener("change", colorPickerOnChange, true);
+
+// function colorPickerOnChange(e) {
+//   let color = e.target.value;
+//   addColorDiv(color);
+// }
+
+// function addColorDiv(color) {
+//   container.style.backgroundColor = color;
+// }
+
 // function to apply colorpicker value to grid //
-function draw() {
-  document.getElementByID("colorPicker.value");
-}
+// let userColor = document.querySelector("colorPicker");
+
+// function draw() {
+//   document.getElementsByClassName(
+//     "grid-item"
+//   ).style.backgroundColor = colorPicker.value;
+// }
