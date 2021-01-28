@@ -52,26 +52,38 @@ function disableSlider() {
 }
 
 // function to log colorpicker value // Currently works as input color only
-colorBtn.addEventListener("click", colorChoice);
-container.addEventListener("mouseover", function (e) {
-  e.target.style.backgroundColor = "blue";
-});
+// colorBtn.addEventListener("click", colorChoice);
+// container.addEventListener("mouseover", function (e) {
+//   e.target.style.backgroundColor = "blue";
+// });
 
-function colorChoice() {
-  console.log(colorPicker.value);
+// function colorChoice() {
+//   console.log(colorPicker.value);
+// }
+
+// colorBtn.addEventListener("click", colorChoice);
+// container.addEventListener("mouseover", function (e) {
+//   e.target.style.backgroundColor = "blue";
+// });
+
+// function colorChoice(e) {
+//   console.log(colorPicker.value);
+// }
+
+let colorPickerEl = document.getElementById("colorPicker");
+colorPickerEl.addEventListener("click", colorPickerOnChange);
+
+function colorPickerOnChange(e) {
+  let color = e.target.value;
+  // console.log(color);
+  addColorDiv(color);
 }
 
-// let colorPickerEl = document.getElementById("colorPicker");
-// colorPickerEl.addEventListener("change", colorPickerOnChange, true);
-
-// function colorPickerOnChange(e) {
-//   let color = e.target.value;
-//   addColorDiv(color);
-// }
-
-// function addColorDiv(color) {
-//   container.style.backgroundColor = color;
-// }
+function addColorDiv(color) {
+  container.addEventListener("mouseover", function (e) {
+    e.target.style.backgroundColor = color;
+  });
+}
 
 // function to apply colorpicker value to grid //
 // let userColor = document.querySelector("colorPicker");
