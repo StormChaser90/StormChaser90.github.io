@@ -4,12 +4,12 @@
 // let cell = [];
 
 // create variable to store container
-const container = document.getElementById("container");
+// const container = document.getElementById("container");
 //
 // Update the current slider value
 function updateGrid() {
   let userInput = document.getElementById("sliderRange").value;
-  document.getElementById("demo").innerHTML = userInput;
+  document.getElementById("demo").innerHTML = userInput + " by " + userInput;
   container.style.gridTemplateColumns = `repeat(${userInput}, 1fr`;
   container.style.gridTemplateRows = `repeat(${userInput}, 1fr`;
   let allCells = userInput * userInput;

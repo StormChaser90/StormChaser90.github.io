@@ -7,7 +7,19 @@
   </head>
   <body>
     <h1>Etch-A-Sketch</h1>
-    <p>Drag Slider to Set Grid Size: <span id="demo"></span></p>
+    <h2>How to Use</h2>
+    <ol>
+      <li>Drag the slider to set size of the grid.</li>
+      <li>Click "Set"</li>
+      <li>Select color</li>
+      <li>Draw away!</li>
+    </ol>
+    <h3>Tips:</h3>
+    <ul>
+      <li>You must close the color wheel in order to apply selection.</li>
+      <li>You may draw with multiple colors, simply select a new color!</li>
+    </ul>
+    <p>Grid Size: <span id="demo"></span></p>
     <button id="gridBtn" onclick="updateGrid(), btnClick(), disableSlider()">
       Set
     </button>
@@ -17,7 +29,7 @@
       <input type="range" min="10" max="50" class="slider" id="sliderRange" />
     </div>
     <div id="colorSelection">
-      Choose your color:
+      Select a color:
       <input type="color" id="colorPicker" />
     </div>
     <div id="container"></div>
