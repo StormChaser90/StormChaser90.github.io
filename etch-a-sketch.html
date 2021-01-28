@@ -5,34 +5,53 @@
     <title>Page Title</title>
     <meta charset="UTF-8" />
   </head>
-  <body>
-    <h1>Etch-A-Sketch</h1>
-    <h2>How to Use</h2>
-    <ol>
-      <li>Drag the slider to set size of the grid.</li>
-      <li>Click "Set"</li>
-      <li>Select color</li>
-      <li>Draw away!</li>
-    </ol>
-    <h3>Tips:</h3>
-    <ul>
-      <li>You must close the color wheel in order to apply selection.</li>
-      <li>You may draw with multiple colors, simply select a new color!</li>
-    </ul>
-    <p>Grid Size: <span id="demo"></span></p>
-    <button id="gridBtn" onclick="updateGrid(), btnClick(), disableSlider()">
-      Set
-    </button>
-    <br />
-    <br />
-    <div class="slidecontainer">
-      <input type="range" min="10" max="50" class="slider" id="sliderRange" />
-    </div>
-    <div id="colorSelection">
-      Select a color:
-      <input type="color" id="colorPicker" />
-    </div>
-    <div id="container"></div>
-    <script src="script.js"></script>
-  </body>
+  <div class="grid">
+    <h1 class="page-header">Etch-A-Sketch</h1>
+    <body>
+      <div id="directions">
+        <h2>How to Use</h2>
+        <ol id="directionList">
+          <li>Drag the slider to set the size of the grid.</li>
+          <li>Click "Set"</li>
+          <li>Select color</li>
+          <li>Draw away!</li>
+        </ol>
+        <h3>Tips:</h3>
+        <ul id="tipList">
+          <li>
+            After selecting a color of your choice, you must close the color
+            wheel in order to apply the selection.
+          </li>
+          <li>
+            Your drawing may included multiple colors, simply select a new color
+            as you go!
+          </li>
+        </ul>
+      </div>
+      <div id="selections">
+        <div class="slidecontainer">
+          <input
+            type="range"
+            min="10"
+            max="50"
+            class="slider"
+            id="sliderRange"
+          />
+          <button
+            id="gridBtn"
+            onclick="updateGrid(), btnClick(), disableSlider()"
+          >
+            Set
+          </button>
+          <p>Grid Size: <span id="demo"></span></p>
+          <div id="colorSelection">
+            Select a color:
+            <input type="color" id="colorPicker" />
+          </div>
+        </div>
+        <div id="container"></div>
+      </div>
+      <script src="script.js"></script>
+    </body>
+  </div>
 </html>
